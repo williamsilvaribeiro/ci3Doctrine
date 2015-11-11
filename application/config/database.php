@@ -50,12 +50,12 @@ $active_record = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql:host=localhost;dbname=teste;',//Habilitar para usar o sistema
-//	'hostname' => 'localhost',//Habilitar para criar tabelas no banco
+	//'hostname' => 'mysql:host=localhost;dbname=teste;',//Habilitar para usar o sistema
+	'hostname' => 'localhost',//Habilitar para criar tabelas no banco
 	'username' => 'root',
 	'password' => '',
 	'database' => 'teste',
-	'dbdriver' => 'pdo',
+	'dbdriver' => 'mysql',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => TRUE,

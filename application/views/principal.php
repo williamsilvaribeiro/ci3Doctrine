@@ -69,7 +69,7 @@
             <div class="col-md-3">
 
                 <div class="menu-item blue">
-                    <a href="#marmitexModa" data-toggle="modal">
+                    <a href=<?php echo base_url(); ?>principal/adicionar data-toggle="modal">
                         <i class="fa fa-cutlery"></i>
                         <p>Marmitex Moda da Casa</p>
                     </a>

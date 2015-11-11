@@ -6,8 +6,7 @@
  * @Entity
  * @Table(name="usuario")
  */
-class usuario
-{
+class Usuarios {
     /**
      * @Id @Column(type="integer")
      * @GeneratedValue(strategy="IDENTITY")
@@ -39,6 +38,22 @@ class usuario
      * @var type
      */
     public $celular = '';
+    /**
+     * @Column(type="string", length=32, nullable=true)
+     * @var type
+     */
+    public $endereco = '';
+    /**
+     * @Column(type="string", length=32, nullable=true)
+     * @var type
+     */
+    public $cep = '';
+
+    /**
+     * @Column(type="string", nullable=true)
+     * @var type
+     * */
+    public $data = '';
 }
 
 
