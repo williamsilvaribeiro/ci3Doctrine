@@ -34,7 +34,7 @@ class Clientes {
 
 
     /**
-     * @Column(type="string", length=32, nullable=true)
+     *  @ORM\Column(type="string", length=32, nullable=true)
      * @var type
      */
     public $celular = '';
@@ -48,6 +48,11 @@ class Clientes {
      * @var type
      */
     public $cep = '';
+    /**
+     * @Column(type="integer", length=32, nullable=true)
+     * @var type
+     */
+    public $idUsuario = '';
 }
 
 

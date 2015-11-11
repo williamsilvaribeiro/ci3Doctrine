@@ -14,6 +14,7 @@ class Usuarios {
     public $id = 0;
 
 
+
     /**
      * @Column(type="string", columnDefinition="VARCHAR(50) NOT NULL")
      */
@@ -54,6 +55,13 @@ class Usuarios {
      * @var type
      * */
     public $data = '';
+
+
+    /**
+     * @OneToMany(targetEntity="Clientes", mappedBy = "usuarios")
+     * @JoinColumn(name="id", referencedColumnName="idUsuario")
+     * */
+    public $clientes;
 }
 
 

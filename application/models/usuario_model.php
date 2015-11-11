@@ -9,4 +9,19 @@ class Usuario_model extends CI_Model {
         $this->doctrine->em->persist($objeto);
         $this->doctrine->em->flush();
     }
+
+    public function editar($objeto) {
+        $this->doctrine->em->merge($objeto);
+        $this->doctrine->em->flush();
+    }
+
+    public function buscarTodos($nomeTabela) {
+        $obj = $this->doctrine->em->getRepository($nomeTabela)->findAll();
+        return $obj;
+    }
+
+    public function excluir($obj) {
+        $this->doctrine->em->remove($obj);
+        $this->doctrine->em->flush();
+    }
 }

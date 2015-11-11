@@ -51,7 +51,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="logo text-center">
-                    <h1>Restaurante Palace</h1>
+                    <h1>Teste de Sistemas</h1>
                     <span>Controle de Pedidos</span>
                 </div>
             </div>
@@ -69,23 +69,23 @@
             <div class="col-md-3">
 
                 <div class="menu-item blue">
-                    <a href=<?php echo base_url(); ?>principal/adicionar data-toggle="modal">
+                    <a href=<?php echo base_url(); ?>principal/buscar data-toggle="modal">
                         <i class="fa fa-cutlery"></i>
-                        <p>Marmitex Moda da Casa</p>
+                        <p>Buscar Dados</p>
                     </a>
                 </div>
 
                 <div class="menu-item green">
-                    <a href="" data-toggle="modal">
+                    <a href=<?php echo base_url(); ?>principal/adicionar data-toggle="modal">
                         <i class="fa fa-file-photo-o"></i>
-                        <p>Etiquetas</p>
+                        <p>Adicionar Dados</p>
                     </a>
                 </div>
 
                 <div class="menu-item light-red">
-                    <a href="" data-toggle="modal">
+                    <a href=<?php echo base_url(); ?>principal/excluir data-toggle="modal">
                         <i class="fa fa-motorcycle"></i>
-                        <p>Entregas</p>
+                        <p>Excluir Dados</p>
                     </a>
                 </div>
 
@@ -124,9 +124,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="menu-item color responsive">
-                            <a href="" data-toggle="modal">
+                            <a href=<?php echo base_url(); ?>principal/editar data-toggle="modal">
                                 <i class="fa fa-area-chart"></i>
-                                <p>Relatorio Diário</p>
+                                <p>Editar Dados</p>
                             </a>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                         <div class="menu-item light-orange responsive-2">
                             <a href="" data-toggle="modal">
                                 <i class="fa fa-area-chart"></i>
-                                <p>Relatorio Semanal</p>
+                                <p>...</p>
                             </a>
                         </div>
                     </div>
@@ -149,21 +149,21 @@
                 <div class="menu-item light-red">
                     <a href="#marmitexCliente" data-toggle="modal">
                         <i class="fa fa-cutlery"></i>
-                        <p>Marmitex moda do Cliente</p>
+                        <p>...</p>
                     </a>
                 </div>
 
                 <div class="menu-item color">
                     <a href="" data-toggle="modal">
                         <i class="fa fa-comment-o"></i>
-                        <p>Suporte Técnico</p>
+                        <p>...</p>
                     </a>
                 </div>
 
                 <div class="menu-item blue">
                     <a href="" data-toggle="modal">
                         <i class="fa fa-mortar-board"></i>
-                        <p>Cadastro Clientes</p>
+                        <p>...</p>
                     </a>
                 </div>
 

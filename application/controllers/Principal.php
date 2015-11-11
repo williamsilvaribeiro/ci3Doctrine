@@ -24,9 +24,23 @@ class Principal extends CI_Controller {
         $this->load->view('principal');
     }
 
-    public function isMobile() {
-        return ob_start();
-        preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i",
-            $_SERVER["HTTP_USER_AGENT"]);
+    public function buscar() {
+        $nomeTabela = get_class($this->usuario);
+        $this->load->view('principal');
+        return $this->usuario_model->buscarTodos($nomeTabela);
+    }
+
+    public function editar() {
+        $objeto = $this->buscar()[0];
+        $this->usuario = $objeto;
+        $this->usuario->nome = 'William';
+        $this->usuario_model->editar($this->usuario);
+        $this->load->view('principal');
+    }
+
+    public function excluir() {
+        $var = $this->buscar()[0]?$this->buscar()[0]:null;
+        $this->usuario_model->excluir($var);
+        $this->load->view('principal');
     }
 }
