@@ -31,3 +31,7 @@ Testando o CodeIgniter: http://localhost/doctrine/
 
 Referência: http://www.joelverhagen.com/blog/2011/05/setting-up-codeigniter-2-with-doctrine-2-the-right-way/
 
+php doctrine orm:convert-mapping --force --from-database annotation ./EXPORT/
+php doctrine orm:generate-entities ./EXPORT/ --generate-annotations=true
+
+

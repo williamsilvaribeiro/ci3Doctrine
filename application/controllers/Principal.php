@@ -4,7 +4,7 @@ class Principal extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('Entities/usuarios', 'usuario');
+        $this->load->model('Entities/BlogComment', 'usuario');
         $this->load->model('usuario_model');
     }
 
@@ -13,12 +13,8 @@ class Principal extends CI_Controller {
     }
 
     public function adicionar(){
-        $this->usuario->nome = 'Ricardo';
-        $this->usuario->email = 'meuemail@mail.com.br';
-        $this->usuario->telefone = '11-1122-3345';
-        $this->usuario->celular = '11-9988-7765';
-        $this->usuario->endereco = '';
-        $this->usuario->data = date('Y-m-d');
+        $this->usuario->autor ='Teste';
+
 
         $this->usuario_model->salvar($this->usuario);
         $this->load->view('principal');
