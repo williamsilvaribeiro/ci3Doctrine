@@ -7,72 +7,159 @@
 /**
  * Clientes
  *
- * @Table(name="clientes")
- * @Entity
+ *  @ORM\Table(name="clientes")
+ *  @ORM\Entity
  */
 class Clientes
 {
     /**
-     * @var integer $idCliente
+     *  @ORM\var integer $idCliente
      *
-     * @Column(name="idCliente", type="integer", nullable=false)
-     * @Id
-     * @GeneratedValue(strategy="IDENTITY")
+     *  @ORM\Column(name="idCliente", type="integer", nullable=false)
+     *  @ORM\Id
+     *  @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idCliente;
 
     /**
-     * @var string $nome
+     *  @ORM\var string $nome
      *
-     * @Column(name="nome", type="string", length=50, nullable=false)
+     *  @ORM\Column(name="nome", type="string", length=50, nullable=false)
      */
     private $nome;
 
     /**
-     * @var string $email
+     *  @ORM\var string $email
      *
-     * @Column(name="email", type="string", length=50, nullable=false)
+     *  @ORM\Column(name="email", type="string", length=50, nullable=false)
      */
     private $email;
 
     /**
-     * @var string $telefone
+     *  @ORM\var string $telefone
      *
-     * @Column(name="telefone", type="string", length=32, nullable=true)
+     *  @ORM\Column(name="telefone", type="string", length=32, nullable=true)
      */
     private $telefone;
 
     /**
-     * @var string $endereco
+     *  @ORM\var string $endereco
      *
-     * @Column(name="endereco", type="string", length=32, nullable=true)
+     *  @ORM\Column(name="endereco", type="string", length=32, nullable=true)
      */
     private $endereco;
 
     /**
-     * @var string $cep
+     *  @ORM\var string $cep
      *
-     * @Column(name="cep", type="string", length=32, nullable=true)
+     *  @ORM\Column(name="cep", type="string", length=32, nullable=true)
      */
     private $cep;
 
-    /**
-     * @var integer $usuarioId
-     *
-     * @Column(name="usuarioId", type="integer", nullable=true)
-
-     */
-    private $usuarioId;
-
 
     /**
-     * @ManyToOne(targetEntity="Usuario", inversedBy="children")
-     * @JoinColumn(name="usuarioId", referencedColumnName="idUsuario")
+     *  @ORM\ManyToOne(targetEntity="Usuario", inversedBy="children")
+     *  @ORM\JoinColumn(name="usuarioId", referencedColumnName="idUsuario" cascade={"remove"})
      */
-    private $users;
+    private $usuario;
 
+    /**
+     *  @ORM\return int
+     */
+    public function getIdCliente() {
+        return $this->idCliente;
+    }
 
-    //usuarioId idUsuario
+    /**
+     *  @ORM\param int $idCliente
+     */
+    public function setIdCliente($idCliente) {
+        $this->idCliente = $idCliente;
+    }
+
+    /**
+     *  @ORM\return mixed
+     */
+    public function getUsuario() {
+        return $this->usuario;
+    }
+
+    /**
+     *  @ORM\param mixed $usuario
+     */
+    public function setUsuario($usuario) {
+        $this->usuario = $usuario;
+    }
+
+    /**
+     *  @ORM\return string
+     */
+    public function getNome() {
+        return $this->nome;
+    }
+
+    /**
+     *  @ORM\param string $nome
+     */
+    public function setNome($nome) {
+        $this->nome = $nome;
+    }
+
+    /**
+     *  @ORM\return string
+     */
+    public function getEmail() {
+        return $this->email;
+    }
+
+    /**
+     *  @ORM\param string $email
+     */
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
+    /**
+     *  @ORM\return string
+     */
+    public function getTelefone() {
+        return $this->telefone;
+    }
+
+    /**
+     *  @ORM\param string $telefone
+     */
+    public function setTelefone($telefone) {
+        $this->telefone = $telefone;
+    }
+
+    /**
+     *  @ORM\return string
+     */
+    public function getEndereco() {
+        return $this->endereco;
+    }
+
+    /**
+     *  @ORM\param string $endereco
+     */
+    public function setEndereco($endereco) {
+        $this->endereco = $endereco;
+    }
+
+    /**
+     *  @ORM\return string
+     */
+    public function getCep() {
+        return $this->cep;
+    }
+
+    /**
+     *  @ORM\param string $cep
+     */
+    public function setCep($cep) {
+        $this->cep = $cep;
+    }
 
 
 
