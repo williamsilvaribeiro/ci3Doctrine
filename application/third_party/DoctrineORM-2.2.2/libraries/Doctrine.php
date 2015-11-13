@@ -15,6 +15,10 @@ class Doctrine {
 
     public $em = '';
 
+//    models/Entities
+//    __DIR__ .
+//    third_party/DoctrineORM-2.2.2/libraries/
+
     public function __construct() {
         // Set up class loading. You could use different autoloaders, provided by your favorite framework,
         // if you want to.
@@ -39,7 +43,7 @@ class Doctrine {
         $config->setQueryCacheImpl($cache);
 
         // Proxy configuration
-        $config->setProxyDir(APPPATH . 'third_party/DoctrineORM-2.2.2/libraries/Proxies');
+        $config->setProxyDir(APPPATH . 'models/Proxies');
         $config->setProxyNamespace('Proxies');
 
 
@@ -96,16 +100,16 @@ class Doctrine {
         $generator->setRegenerateEntityIfExists(true);
         $generator->setGenerateStubMethods(true);
         $generator->setGenerateAnnotations(true);
-        $generator->generate($metadata, __DIR__ . '\Entities');
+        $generator->generate($metadata, 'application\models\Entities');
 
         //Cria as classes Repository
         foreach ($classes as &$classe) {
             $repository = new EntityRepositoryGenerator();
-            $repository->writeEntityRepositoryClass('Repository\\' . $classe, __DIR__);
+            $repository->writeEntityRepositoryClass('Repository\\' . $classe, 'application\models');
         }
 
         //Carrega todas as entities criadas
-        $dir = glob(__DIR__ .'\Entities/*.php');
+        $dir = glob('application\models\Entities/*.php');
         foreach($dir as &$classFilename) {
             require_once $classFilename;
         }
