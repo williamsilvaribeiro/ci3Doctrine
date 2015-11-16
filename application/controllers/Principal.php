@@ -1,10 +1,11 @@
 <?php
+//require_once 'models\Repository\BlogPost.php';
 
 class Principal extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('Entities/BlogComment', 'usuario');
+        $this->load->model('Entities/BlogComment', 'comment');
         $this->load->model('usuario_model');
     }
 
@@ -13,15 +14,17 @@ class Principal extends CI_Controller {
     }
 
     public function adicionar(){
-        $this->usuario->autor ='Teste';
+        $this->postagem->setContent('teste');
+        $this->postagem->setCreatedAt(date('Y-m-d'));
+        $this->postagem->setTitle('testetsess');
 
+        $this->usuario_model->salvar($this->postagem);
 
-        $this->usuario_model->salvar($this->usuario);
         $this->load->view('principal');
     }
 
     public function buscar() {
-        $nomeTabela = get_class($this->usuario);
+        $nomeTabela = get_class($this->comment);
         $this->load->view('principal');
         return $this->usuario_model->buscarTodos($nomeTabela);
     }

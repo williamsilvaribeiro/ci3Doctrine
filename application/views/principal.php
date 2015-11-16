@@ -24,7 +24,7 @@
     <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<!--    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>-->
 
 
     <!-- Template js -->

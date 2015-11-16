@@ -54,8 +54,6 @@ class Doctrine {
 
         $config->setAutoGenerateProxyClasses(TRUE);
 
-       // \Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration(array(__DIR__."/models/Entities"), true, null, null, false);
-
 
         require APPPATH . 'config/database.php';
 
