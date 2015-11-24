@@ -42,3 +42,43 @@ php doctrine orm:convert-mapping xml ./EXPORT/ --from-database --force
 
 
 php doctrine orm:mapping:import annotation
+
+
+/* // fetch metadata
+        $driver = new \Doctrine\ORM\Mapping\Driver\DatabaseDriver(
+            $this->em->getConnection()->getSchemaManager()
+        );
+
+        $this->em->getConfiguration()->setMetadataDriverImpl($driver);
+        $cmf = new \Doctrine\ORM\Tools\DisconnectedClassMetadataFactory();
+        $cmf->setEntityManager($this->em);
+
+        $classes = $driver->getAllClassNames();
+
+        $metadata = array();
+        foreach ($classes as &$class) {
+            $metadata[] = $cmf->getMetadataFor($class);
+        }
+
+        //Cria as entidades através do Metadata Driver Impl setado
+        $generator = new EntityGenerator();
+        $generator->setRegenerateEntityIfExists(true);
+        $generator->setGenerateStubMethods(true);
+        $generator->setGenerateAnnotations(true);
+        $generator->generate($metadata, 'application\models\Entities');
+
+        //Cria as classes Repository
+        foreach ($classes as &$classe) {
+            $repository = new EntityRepositoryGenerator();
+            $repository->writeEntityRepositoryClass('Repository\\' . $classe, 'application\models');
+        }
+
+        //Carrega todas as entities criadas
+        $dir = glob('application\models\Entities/*.php');
+        foreach($dir as &$classFilename) {
+            require_once $classFilename;
+        }
+
+        //Gera as classes Proxies
+        $mt = $this->em->getMetadataFactory();
+        $this->em->getProxyFactory()->generateProxyClasses($mt->getAllMetadata());*/

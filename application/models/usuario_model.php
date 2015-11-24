@@ -17,7 +17,13 @@ class Usuario_model extends CI_Model {
 
     public function buscarTodos($nomeTabela) {
 
-        $obj = $this->doctrine->em->getRepository($nomeTabela)->findAll();
+
+
+        $entityRepository = $this->doctrine->em->getRepository($nomeTabela);
+        
+//        $entityRepository = new \Repository\BlogComment();
+//        $obj = $entityRepository->findAll();
+        $obj = $this->doctrine->em->find($nomeTabela, 1);
 //        $obj = $this->doctrine->em->find($nomeTabela,2);
         return $obj;
     }

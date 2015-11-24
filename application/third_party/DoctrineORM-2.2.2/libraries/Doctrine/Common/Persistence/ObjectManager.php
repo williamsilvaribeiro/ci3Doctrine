@@ -119,7 +119,7 @@ interface ObjectManager
     /**
      * Gets the metadata factory used to gather the metadata of classes.
      *
-     * @return Doctrine\Common\Persistence\Mapping\ClassMetadataFactory
+     * @return \Doctrine\Common\Persistence\Mapping\ClassMetadataFactory
      */
     function getMetadataFactory();
 

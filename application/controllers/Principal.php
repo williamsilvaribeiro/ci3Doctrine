@@ -1,11 +1,12 @@
 <?php
-//require_once 'models\Repository\BlogPost.php';
+
+use Repository\ComprasRepository;
 
 class Principal extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('Entities/BlogComment', 'comment');
+        $this->load->model('Entities/Compras', 'compras');
         $this->load->model('usuario_model');
     }
 
@@ -14,17 +15,17 @@ class Principal extends CI_Controller {
     }
 
     public function adicionar(){
-        $this->postagem->setContent('teste');
-        $this->postagem->setCreatedAt(date('Y-m-d'));
-        $this->postagem->setTitle('testetsess');
+        $this->cliente->setNome('maira');
+        $this->cliente->setEndereco("fdfsdfsdfsfsdfsd");
 
-        $this->usuario_model->salvar($this->postagem);
+        $this->doctrine->em->persist($this->cliente);
+        $this->doctrine->em->flush($this->cliente);
 
         $this->load->view('principal');
     }
 
     public function buscar() {
-        $nomeTabela = get_class($this->comment);
+        $nomeTabela = get_class($this->compras);
         $this->load->view('principal');
         return $this->usuario_model->buscarTodos($nomeTabela);
     }
